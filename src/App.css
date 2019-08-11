@@ -9,7 +9,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,9 +31,18 @@
   }
 }
 
-ol li{
+ol {
+  width:100%;
+}
+li{
   list-style-type: none;
   margin: 0 auto;
+  margin-right: 50px;
+  height:2em;
+  text-align: center;
+  border: 1px solid rgba(241, 235, 235, 0.9);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; 
 
   
  
@@ -44,15 +52,14 @@ ol li{
 }
 .cards{
   margin: 0 auto;
-  margin-top: 25%;
+  margin-top: 15%;
   width: 25%;
-  float: center;
   margin-bottom: 1em;
   
 }
 .cardbodies{
- float: left;
+ width: 100%;
 }
 .main{
-  background-color: black;
+
 }

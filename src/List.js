@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import web3 from "../web3";
 
 class List extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class List extends Component {
     };
     this.changeText = this.changeText.bind(this);
   }
+  
   changeText(event) {
     this.setState({
       name: event.target.value
@@ -27,13 +29,15 @@ class List extends Component {
     this.setState({
       list: [...this.state.list, this.state.name]
     });
+    
   };
+
   render() {
     return (
       <div className="main">
         <Card className="cards">
           <Card.Body className="cardbodies">
-            <h1>ToDo List</h1>
+            <h1>Things to do</h1>
             <ol>
               {(this.todos = this.state.list.map(post => <li> {post} </li>))}
             </ol>
