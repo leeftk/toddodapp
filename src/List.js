@@ -4,11 +4,16 @@ import Card from "react-bootstrap/Card";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Web3 from 'web3';
+import TruffleContract from "/truffle-contract";
+import Todo from "/build/Todo.json";
+
+
 
 const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
 web3.eth.getAccounts().then(console.log);
 
 console.log(web3.eth.getAccounts())
+console.log(web3.eth.accounts[0])
 
 
 
@@ -21,6 +26,15 @@ class List extends Component {
     const web3 = new Web3(Web3.givenProvider || "http://localhost:8545")
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
+    //var todo = web3.eth.contract(PASTE ABI HERE!);
+//const todo = web3.eth.Contract(Todo.abi,networkData.address)
+    
+
+
+    const todo = TruffleContract(Todo);
+    todo.setProvider(web3.currentProvider);
+    console.log(todo)
+
   }
   constructor(props) {
     super(props);
