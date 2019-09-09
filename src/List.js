@@ -4,8 +4,8 @@ import Card from "react-bootstrap/Card";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Web3 from 'web3';
-import TruffleContract from "/truffle-contract";
-import Todo from "/build/Todo.json";
+//import TruffleContract from "truffle-contract";
+import Todo from "./build/contracts/Todo.json";
 
 
 
@@ -31,11 +31,21 @@ class List extends Component {
     
 
 
-    const todo = TruffleContract(Todo);
-    todo.setProvider(web3.currentProvider);
-    console.log(todo)
+    // const todo = TruffleContract(Todo);
+    // todo.setProvider(web3.currentProvider);
+    // console.log(todo)
 
-  }
+    const networkId = await web3.eth.net.getId();
+    const deployedNetwork = Todo.networks[networkId];
+    const instance = new web3.eth.Contract(
+      Todo.abi,
+      deployedNetwork && deployedNetwork.address,
+
+
+    )
+
+    console.log(instance)
+}
   constructor(props) {
     super(props);
     this.state = {
