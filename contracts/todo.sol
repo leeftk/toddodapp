@@ -1,24 +1,26 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 contract Todo{
-    uint taskcount  = 0;
+    uint public taskCount  = 0 ;
+    string public test = "test";
    
     struct Task{
-        uint taskcount;
+        uint id;
         string content;
         bool completed;
     }
     
    mapping(uint => Task) list;
+
+   
    
    function createTask(string memory _content) public {
       //increase task _content
-      taskcount++;
+      taskCount++;
       
-      
-      
-      //get task from struct and put in in the taks array relative to the task count indexed
-      list[taskcount] = Task(taskcount,_content,false);
+      //get task from struct and put in in the ta array relative to the task count indexed
+      list[taskCount] = Task(taskCount,_content,false);
    }
+
 
 }
