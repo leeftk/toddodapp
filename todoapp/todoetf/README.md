@@ -8,11 +8,11 @@
 
 In the project directory, you can run:
 
-### `truffle migrate`
-
 This will migrate the contracts to your local blockchain
 
+### `truffle migrate`
+
+This will start the app.
 
 ### `npm run start`
 
-This will start the app.
