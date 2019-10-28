@@ -8,7 +8,7 @@
 
 In the project directory, you can run:
 
-This will migrate the contracts to your local blockchain
+This will migrate the contracts to your local blockchain.
 
 ### `truffle migrate`
 
